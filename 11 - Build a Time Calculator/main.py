@@ -20,7 +20,7 @@ def add_time(start_time: str, duration: str, start_day: str = None) -> str:
 
 
     final_period = "PM" if final_hour >= 12 else "AM"
-    final_hour = final_hour % 12 or 12
+    final_hour %= 12 or 12
 
     new_time = f'{final_hour}:{final_minute:02d} {final_period}'
 
@@ -61,3 +61,4 @@ print(add_time('6:30 PM', '205:12'))
 print('\n<--------------->\n')
 
 print(add_time('8:16 PM', '466:02'))
+# Returns: 6:18 AM (20 days later)
