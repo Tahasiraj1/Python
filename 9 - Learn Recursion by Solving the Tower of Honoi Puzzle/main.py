@@ -11,9 +11,9 @@
 NUMBER_OF_DISKS_ITERATIVE = 4
 number_of_moves = 2 ** NUMBER_OF_DISKS_ITERATIVE - 1
 rods = {
-    'A': list(range(NUMBER_OF_DISKS_ITERATIVE, 0, -1)),
-    'B': [],
-    'C': []
+    'A': list(range(NUMBER_OF_DISKS_ITERATIVE, 0, -1)), # source rod
+    'B': [], # auxiliary rod
+    'C': [] # target rod
 }
 
 def make_allowed_move_iterative(rod1, rod2):    
@@ -66,9 +66,9 @@ move_iterative(NUMBER_OF_DISKS_ITERATIVE, 'A', 'B', 'C')
 
 
 NUMBER_OF_DISKS = 5
-A = list(range(NUMBER_OF_DISKS, 0, -1))
-B = []
-C = []
+A = list(range(NUMBER_OF_DISKS, 0, -1)) # source rod
+B = [] # auxiliary rod
+C = [] # target rod
 
 def move(n, source, auxiliary, target):
     if n <= 0:
