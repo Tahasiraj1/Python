@@ -6,7 +6,8 @@
 # 2. Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack.
 # 3. No disk may be placed on top of a smaller disk.
 
-# The Tower of Hanoi solved using iteration.
+print('\n1. The Tower of Hanoi solved using iteration.')
+print('------------------------------------------\n')
 
 NUMBER_OF_DISKS_ITERATIVE = 4
 number_of_moves = 2 ** NUMBER_OF_DISKS_ITERATIVE - 1
@@ -62,7 +63,8 @@ move_iterative(NUMBER_OF_DISKS_ITERATIVE, 'A', 'B', 'C')
 # That's all for the iterative solution. From now on I'm going to build a function that makes use of a recursive approach. Recursion is when a function calls itself. In this case, I'm going to use recursion to calculate smaller versions of the same problem.
 # Recursion may seem a bit tricky at first, but it's quite useful and powerful.
 
-# The Tower of Hanoi solved using recursion.
+print('\n2. The Tower of Hanoi solved using recursion.')
+print('--------------------------------------------\n\n')
 
 
 NUMBER_OF_DISKS = 5
