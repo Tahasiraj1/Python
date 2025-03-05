@@ -1,4 +1,7 @@
+# Special Methods by Building a Vector Space
+
 class R2Vector:
+    # Constructor
     def __init__(self, *, x, y):
         self.x = x
         self.y = y
@@ -6,26 +9,31 @@ class R2Vector:
     def norm(self):
         return sum(val**2 for val in vars(self).values())**0.5
 
+    # String representation
     def __str__(self):
         return str(tuple(getattr(self, i) for i in vars(self)))
 
+    # Representation
     def __repr__(self):
         arg_list = [f'{key}={val}' for key, val in vars(self).items()]
         args = ', '.join(arg_list)
         return f'{self.__class__.__name__}({args})'
 
+    # Addition
     def __add__(self, other):
         if type(self) != type(other):
             return NotImplemented
         kwargs = {i: getattr(self, i) + getattr(other, i) for i in vars(self)}
         return self.__class__(**kwargs)
 
+    # Subtraction
     def __sub__(self, other):
         if type(self) != type(other):
             return NotImplemented
         kwargs = {i: getattr(self, i) - getattr(other, i) for i in vars(self)}
         return self.__class__(**kwargs)
 
+    # Multiplication
     def __mul__(self, other):
         if type(other) in (int, float):
             kwargs = {i: getattr(self, i) * other for i in vars(self)}
@@ -35,27 +43,33 @@ class R2Vector:
             return sum(args)            
         return NotImplemented
 
+    # Equality
     def __eq__(self, other):
         if type(self) != type(other):
             return NotImplemented
         return all(getattr(self, i) == getattr(other, i) for i in vars(self))
         
+    # Inequality
     def __ne__(self, other):
         return not self == other
 
+    # Less than
     def __lt__(self, other):
         if type(self) != type(other):
             return NotImplemented
         return self.norm() < other.norm()
 
+    # Greater than
     def __gt__(self, other):
         if type(self) != type(other):
             return NotImplemented
         return self.norm() > other.norm()
 
+    # Less than or equal
     def __le__(self, other):
         return not self > other
 
+    # Greater than or equal
     def __ge__(self, other):
         return not self < other
 
