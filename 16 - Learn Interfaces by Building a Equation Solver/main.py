@@ -130,4 +130,5 @@ def solver(equation):
 
 lin_eq = LinearEquation(2, 3)
 quadr_eq = QuadraticEquation(1, 2, 1)
-print(solver(quadr_eq))
+# print(solver(quadr_eq))
+print(solver(lin_eq))
