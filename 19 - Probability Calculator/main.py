@@ -23,8 +23,6 @@ class Hat:
             self.contents.remove(ball)
         return drawn_balls
 
-import copy
-
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
     success_count = 0  
 
