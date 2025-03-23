@@ -38,7 +38,7 @@ def merge_sort(array):
 if __name__ == '__main__':
     numbers = [4, 10, 6, 14, 2, 1, 8, 5, 9, 15, 3, 7, 12, 11, 13, -1, 0]
     print('Unsorted array: ', numbers)
-    numbers.sort()
-    print(f'Built in Sort function: {numbers}')
+    # numbers.sort()
+    # print(f'Built in Sort function: {numbers}')
     merge_sort(numbers)
-    print('Sorted array: ' + str(numbers))
+    print(f'Merge Sorted array: {numbers}')
