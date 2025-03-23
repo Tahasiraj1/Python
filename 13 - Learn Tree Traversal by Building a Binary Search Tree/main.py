@@ -1,18 +1,20 @@
+from dataclasses import dataclass
+from typing import TypeVar
 
+T = TypeVar('T')
+
+@dataclass
 class TreeNode:
-
-    def __init__(self, key):
-        self.key = key
-        self.left = None
-        self.right = None
+    key: T
+    left = None
+    right = None
 
     def __str__(self):
         return str(self.key)
 
+@dataclass
 class BinarySearchTree:
-
-    def __init__(self):
-        self.root = None
+    root = None
 
     def _insert(self, node, key):
         if node is None:
@@ -85,6 +87,7 @@ print('Search for 80:', bst.search(80))
 
 print("Inorder traversal:", bst.inorder_traversal())
 
+print('Deleting 40')
 bst.delete(40)
 
 print("Search for 40:", bst.search(40))

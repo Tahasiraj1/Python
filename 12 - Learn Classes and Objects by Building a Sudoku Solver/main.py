@@ -1,6 +1,11 @@
+from dataclasses import dataclass
+from typing import TypeVar
+
+T = TypeVar('T')
+
+@dataclass
 class Board:
-    def __init__(self, board):
-        self.board = board
+    board: list[list[T]]
 
     def __str__(self):
         board_str = ''
